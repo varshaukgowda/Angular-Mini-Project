@@ -1,39 +1,3 @@
-
-// import { Injectable } from '@angular/core';
-// import { BehaviorSubject } from 'rxjs';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class SharedDataService {
-//   private fieldsKey = 'formFields'; // Key for localStorage
-
-//   constructor() {}
-//   private fields= [
-//     { name: 'Name', show: true, required: false },
-//     { name: 'Mobile', show: true, required: false },
-//     { name: 'Email', show: true, required: false },
-//     { name: 'Address', show: true, required: false }
-//   ];
-//   // Save fields to localStorage
-//   setFields(fields: any[]) {
-//     // localStorage.setItem(this.fieldsKey, JSON.stringify(fields));
-//     // this.fields=fields;
-//   }
-
-//   // Retrieve fields from localStorage
-//   getFields(): any[] {
-//     // const fields = localStorage.getItem(this.fieldsKey);
-//     // return fields ? JSON.parse(fields) : [
-//     //   { name: 'Name', show: true, required: false },
-//     //   { name: 'Mobile', show: true, required: false },
-//     //   { name: 'Email', show: true, required: false },
-//     //   { name: 'Address', show: true, required: false }
-//     // ];
-//     return this.fields;
-//   }
-// }
-// // **********************************************************************************************************
 // import { Injectable } from '@angular/core';
 // import { BehaviorSubject } from 'rxjs';
 

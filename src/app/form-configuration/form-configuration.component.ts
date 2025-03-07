@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// Component, OnInit → These are from Angular. OnInit is used for initialization when the component loads.
 import { SharedDataService } from '../shared/shared-data.service';
-// SharedDataService → This is the service that stores the form fields.
 import { Router } from '@angular/router';
-// Router → This allows navigation to another page after saving the form configuration.
 
 @Component({
   selector: 'app-form-configuration',
@@ -22,7 +19,6 @@ export class FormConfigurationComponent implements OnInit {
   ];
 
   private draggedIndex: number | null = null; // Stores the dragged index
-  // This variable stores the index of the field being dragged for drag-and-drop functionality.
 
 
   constructor(private sharedData: SharedDataService,
