@@ -1,0 +1,439 @@
+// .configuration-container {
+//   max-width: 350px;
+//   margin: 20px auto;
+//   padding: 20px;
+//   border: 1px solid #ccc;
+//   border-radius: 8px;
+//   background-color: #f9f9f9;
+
+
+//   table {
+//     width: 100%;
+//     border-collapse: collapse;
+//     margin-bottom: 20px;
+
+//     th, td {
+//       padding: 10px;
+//       text-align: left;
+//       border-bottom: 1px solid #ddd;
+//     }
+
+//     th {
+//       background-color: black;
+//       color: white;
+//     }
+
+//     td {
+//       vertical-align: middle;
+//     }
+//   }
+
+
+//   .button-container {
+//     display: flex;
+//     justify-content: center; // Center the button horizontally
+//     margin-top: 20px;
+
+//     button {
+//       background-color: black; // Black background for the button
+//       color: white; // White text for the button
+//       border: none;
+//       border-radius: 4px;
+//       padding: 10px 20px;
+//       font-size: 16px;
+//       cursor: pointer;
+//       width: 45%; // Full width
+//       transition: background-color 0.3s ease;
+//       // justify-content: center;
+
+//       &:hover {
+//         background-color: #333; // Darker black on hover
+//       }
+//     }
+//   }
+
+//   kendo-grid {
+//     margin-bottom: 20px; // Add space below the grid
+
+//     // Style for grid headers
+//     .k-grid-header {
+//       .k-header {
+//         background-color: black; // Black background for headers
+//         color: white; // White text for headers
+//         font-weight: bold;
+//         text-align: center;
+//       }
+//     }
+
+//     // Hide the header for the Field Name column
+//     .k-grid-header .k-header:first-child {
+//       display: none;
+//     }
+//   }
+
+//   /* Custom checkbox styling */
+//   .checkbox-container {
+//     display: block;
+//     position: relative;
+//     padding-left: 20px;
+//     padding-bottom: 19%;
+//     cursor: pointer;
+//     user-select: none;
+
+//     input {
+//       position: absolute;
+//       opacity: 0;
+//       cursor: pointer;
+//       height: 0;
+//       width: 0;
+//     }
+
+//     .checkmark {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       height: 14px;
+//       width: 14px;
+//       // background-color: black; // Black background for checkboxes
+//       border: 1px solid #ccc;
+//       border-radius: 2px;
+
+//       &:after {
+//         content: "";
+//         position: absolute;
+//         display: none;
+//         // display: flex;
+//         left: 4px;
+//         top: 1px;
+//         width: 4px;
+//         height: 8px;
+//         border: solid white;
+//         border-width: 0 2px 2px 0;
+//         transform: rotate(45deg);
+//       }
+//     }
+
+//     input:checked ~ .checkmark {
+//       background-color: black; // Keep black background when checked
+//       border-color: black;
+//     }
+
+//     input:checked ~ .checkmark:after {
+//       display: block;
+//     }
+//   }
+// }
+// h1 {
+//   text-align: center;
+//   margin-bottom: 20px;
+//   margin-top: 100px;
+// }
+// kendo-grid .k-grid-row {
+//   cursor: move;
+// }
+
+// kendo-grid .k-grid-row.k-state-hover {
+//   background-color: #f0f0f0;
+// }
+// ************************************************
+
+/* form-configuration.component.scss */
+// h1 {
+//   text-align: center;
+//   margin-bottom: 20px;
+// }
+// .configuration-container {
+//   max-width: 350px;
+//   margin: 15px auto;
+//   // padding: 15px;
+//   // padding-right: 0px;
+//   border: 1px solid #ccc;
+//   border-radius: 8px;
+//   background-color: #f9f9f9;
+
+//   table {
+//     width: 100%;
+//     border-collapse: collapse;
+//     margin-bottom: 20px;
+
+//     th {
+//       padding: 8px;
+//       // text-align: left;
+//       // border-bottom: 1px solid #ddd;
+//       // justify-content: space-between;
+//       font-size: small;
+//       background-color: black;
+//     }
+//     th:first-child {
+//       text-align: left; /* Align "SHOW FIELD" to the left 
+//       */
+//       width: 50%;
+//     }
+
+//     th:nth-child(2) {
+//       text-align: right; /* Align "REQUIRED FIELD" to the right */
+//       width: 50%;
+//     }
+
+//     td {
+//       padding: 10px;
+//       text-align: left;
+//       vertical-align: middle;
+//       // border-bottom: 1px solid #ddd;
+//     }
+
+//     th {
+//       background-color: black;
+//       // background-size: 200%;
+//       // max-width: 200%;
+//       // background-position: 100%;
+//       color: white;
+//       text-align: center;
+//       // max-width: 50px;
+//     }
+
+//     td {
+//       vertical-align: middle;
+//     }
+
+//   }
+
+//   .button-container {
+//     display: flex;
+//     justify-content: center;
+//     padding-bottom: 15px;
+
+//     button {
+//       background-color: black;
+//       color: white;
+//       border: none;
+//       border-radius: 4px;
+//       padding: 10px 20px;
+//       font-size: 16px;
+//       cursor: pointer;
+//       transition: background-color 0.3s ease;
+
+//       &:hover {
+//         background-color: #333;
+//       }
+//     }
+//   }
+
+//   /* Custom checkbox styling */
+//   .checkbox-container {
+//     display: block;
+//     position: relative;
+//     padding-left: 25px;
+//     cursor: pointer;
+//     user-select: none;
+
+//     input {
+//       // position: absolute;
+//       opacity: 0;
+//       cursor: pointer;
+//       height: 0;
+//       width: 0;
+//     }
+
+//     .checkmark {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       height: 18px;
+//       width: 18px;
+//       background-color: #fff;
+//       border: 1px solid #ccc;
+//       border-radius: 4px;
+//     }
+
+//     input:checked ~ .checkmark {
+//       background-color: black;
+//       border-color: black;
+//     }
+
+//     .checkmark:after {
+//       content: "";
+//       position: absolute;
+//       display: none;
+//       left: 6px;
+//       top: 2px;
+//       width: 5px;
+//       height: 10px;
+//       border: solid white;
+//       border-width: 0 2px 2px 0;
+//       transform: rotate(45deg);
+//     }
+
+//     input:checked ~ .checkmark:after {
+//       display: block;
+//     }
+//   }
+// }
+// // *****************************
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 50px;
+  margin-top: 100px;
+
+}
+
+.configuration-container {
+  max-width: 300px;
+  /* Reduced from 350px */
+  margin: 15px auto;
+  /* Reduced from 20px */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  // padding: 15px;
+  /* Added padding for better spacing */
+}
+
+.configuration-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  /* Reduced from 20px */
+}
+
+.configuration-container th {
+  padding: 6px;
+  /* Reduced from 8px */
+  font-size: 10px;
+  /* Reduced from small */
+  background-color: black;
+  color: white;
+
+  // text-align: center;
+}
+
+.configuration-container {
+  width: 100%; /* Ensures the container takes full width */
+
+  table {
+    width: 100%; /* Ensures the table takes full width */
+    border-collapse: collapse;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 10px;
+  }
+
+}
+
+.names{
+  text-align: left;
+  // width:50%;
+}
+
+.configuration-container th:first-child {
+  text-align: left;
+  width:35%;
+
+  // height: 50%;
+}
+
+.configuration-container th:nth-child(2) {
+  text-align: left;
+  // width:30%;
+
+}
+.configuration-container th:nth-child(3) {
+  text-align: right;
+  width:50%;
+
+}
+
+.configuration-container td {
+  padding: 8px;
+  padding-left: 35px;
+  // width: 60%;
+  /* Reduced from 10px */
+  text-align: left;
+  // vertical-align: middle;
+}
+
+.configuration-container .button-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  /* Reduced from 15px */
+}
+
+.configuration-container .button-container button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  /* Reduced from 10px 20px */
+  font-size: 14px;
+  /* Reduced from 16px */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.configuration-container .button-container button:hover {
+  background-color: #333;
+}
+
+.configuration-container .checkbox-container {
+  display: block;
+  position: relative;
+  // padding-left: 80px;
+  /* Reduced from 25px */
+  cursor: pointer;
+  user-select: none;
+
+  // width:50%;
+  // text-align: right;
+}
+
+.configuration-container .checkbox-container input {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+}
+
+.configuration-container .checkbox-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  /* Reduced from 18px */
+  width: 16px;
+  /* Reduced from 18px */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 50px;
+}
+
+.configuration-container .checkbox-container input:checked~.checkmark {
+  background-color: black;
+  border-color: black;
+}
+
+.configuration-container .checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  /* Adjusted from 6px */
+  top: 2px;
+  width: 4px;
+  /* Reduced from 5px */
+  height: 8px;
+  /* Reduced from 10px */
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.configuration-container .checkbox-container input:checked~.checkmark:after {
+  display: block;
+}

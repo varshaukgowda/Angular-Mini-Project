@@ -1,0 +1,184 @@
+
+  <!-- <h1>Member Registration</h1>
+  <div class="registration-container">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div *ngFor="let field of fields">
+        <div *ngIf="field.show" class="form-field">
+          <label>{{ field.name }}</label>
+  
+          <kendo-textbox
+            *ngIf="field.name !== 'Address'"
+            [formControlName]="field.name"
+
+            
+          ></kendo-textbox>
+  
+          <kendo-textarea
+            *ngIf="field.name === 'Address'"
+            [formControlName]="field.name"
+          ></kendo-textarea>
+  
+          <div *ngIf="registrationForm.get(field.name)?.invalid && registrationForm.get(field.name)?.touched" class="error-message">
+            {{ field.name }} is required.
+          </div>
+        </div>
+      </div>
+  
+      <div class="button-container">
+        <button kendoButton type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+  </div> -->
+
+<!-- ****************************************** -->
+  <!-- <h1>Member Registration</h1>
+<div class="registration-container">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of fields">
+      <div *ngIf="field.show" class="form-field">
+        <label>{{ field.name }}</label>
+
+        <kendo-textbox
+          *ngIf="field.name !== 'Address'"
+          [formControlName]="field.name"
+        ></kendo-textbox>
+
+        <kendo-textarea
+          *ngIf="field.name === 'Address'"
+          [formControlName]="field.name"
+        ></kendo-textarea>
+
+        <div *ngIf="registrationForm.get(field.name)?.invalid && registrationForm.get(field.name)?.touched" class="error-message">
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['required']">
+            {{ field.name }} is required.
+          </span>
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['pattern']">
+            <span *ngIf="field.name.toLowerCase() === 'name'">Only alphabets and spaces are allowed.</span>
+            <span *ngIf="field.name.toLowerCase() === 'mobile'">Mobile number must be 10 digits.</span>
+            <span *ngIf="field.name.toLowerCase() === 'email'">Invalid email format.</span>
+            <span *ngIf="field.name.toLowerCase() === 'address'">Invalid characters in address.</span>
+          </span>
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['email']">
+            Invalid email format.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button kendoButton type="submit" [disabled]="registrationForm.invalid" class="submit-button">Submit</button>
+
+    </div>
+  </form>
+</div> -->
+
+<!-- **************************************************************** -->
+
+<!-- 
+<h1>Member Registration</h1>
+<div class="registration-container">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of fields">
+      <div *ngIf="field.show" class="form-field">
+        
+        <label>
+          {{ field.name }}
+          <span *ngIf="field.required" style="color: red;">*</span>
+        </label>
+
+        <kendo-textbox
+          *ngIf="field.name !== 'Address'"
+          [formControlName]="field.name"
+        ></kendo-textbox>
+
+        <kendo-textarea
+          *ngIf="field.name === 'Address'"
+          [formControlName]="field.name"
+        ></kendo-textarea>
+
+        <div *ngIf="registrationForm.get(field.name)?.invalid && registrationForm.get(field.name)?.touched" class="error-message">
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['required']">
+            {{ field.name }} is required.
+          </span>
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['pattern']">
+            <span *ngIf="field.name.toLowerCase() === 'name'">Only alphabets and spaces are allowed.</span>
+            <span *ngIf="field.name.toLowerCase() === 'mobile'">Mobile number must be 10 digits.</span>
+            <span *ngIf="field.name.toLowerCase() === 'email'">Invalid email format.</span>
+            <span *ngIf="field.name.toLowerCase() === 'address'">Invalid characters in address.</span>
+          </span>
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['email']">
+            Invalid email format.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button kendoButton type="submit"  class="submit-button">Submit</button>
+    </div>
+  </form>
+</div> -->
+
+
+<h1>Member Registration</h1>
+<div class="registration-container">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of fields">
+      <div *ngIf="field.show" class="form-field">
+        <!-- Field Label with Required Indicator -->
+        <label>
+          {{ field.name }}
+          <span *ngIf="field.required" style="color: red;">*</span>
+        </label>
+
+        <!-- Kendo TextBox for Name, Mobile, and Email -->
+        <kendo-textbox
+          *ngIf="field.name !== 'Address'"
+          [formControlName]="field.name"
+        ></kendo-textbox>
+
+        <!-- Kendo TextArea for Address -->
+        <kendo-textarea
+          *ngIf="field.name === 'Address'"
+          [formControlName]="field.name"
+        ></kendo-textarea>
+
+        <!-- Validation Messages -->
+        <div *ngIf="registrationForm.get(field.name)?.invalid && registrationForm.get(field.name)?.touched" class="error-message">
+          <!-- Required Field Error -->
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['required']">
+            {{ field.name }} is required.
+          </span>
+
+          <!-- Pattern Validation Errors -->
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['pattern']">
+            <span *ngIf="field.name.toLowerCase() === 'name'">Only alphabets and spaces are allowed.</span>
+            <span *ngIf="field.name.toLowerCase() === 'mobile'">Mobile number must be 10 digits.</span>
+            <span *ngIf="field.name.toLowerCase() === 'email'">Invalid email format.</span>
+            <span *ngIf="field.name.toLowerCase() === 'address'">Invalid characters in address.</span>
+          </span>
+
+          <!-- Email Format Error -->
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['email']">
+            Invalid email format.
+          </span>
+
+          <!-- Custom Validation: Email Starts with Capital Letter -->
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['capitalLetterAtStart']">
+            Email should not start with a capital letter.
+          </span>
+
+          <!-- Custom Validation: Name Contains Only Spaces -->
+          <span *ngIf="registrationForm.get(field.name)?.errors?.['onlySpaces']">
+            Only spaces are not allowed in the Name field.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="button-container">
+      <button kendoButton type="submit" [disabled]="registrationForm.invalid" class="submit-button">Submit</button>
+    </div>
+  </form>
+</div>

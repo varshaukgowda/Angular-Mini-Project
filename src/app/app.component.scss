@@ -1,0 +1,43 @@
+header {
+    display: flex;
+    justify-content: flex-end; // Aligns the nav to the right
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    // border-color: black;
+// body {
+//   background-color: white;
+// }
+  
+    nav {
+      display: flex;
+      gap: 15px; // Adds space between the links
+      background-color: white;
+      
+      // border-color: black;
+  
+      a {
+        text-decoration: none;
+        // color: #007bff;
+        color: black;
+        font-weight: bold;
+        padding: 5px 10px;
+        border: 1px solid black;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        // border-color: black;
+
+  
+        // &:hover {
+        // //   background-color: #e9ecef;
+        // background-color: black;
+        // color: white;
+        // }
+  
+        &.active {
+          color:white;
+          background-color: black;
+        }
+      }
+    }
+  }
