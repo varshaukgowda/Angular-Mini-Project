@@ -1,7 +1,9 @@
 <h1>Member Registration</h1>
 <div class="registration-container">
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <!-- *ngFor directive to iterate over the fields array. -->
     <div *ngFor="let field of fields">
+      
       <div *ngIf="field.show" class="form-field">
         <!-- Field Label with Required Indicator -->
         <label>
@@ -9,7 +11,7 @@
           <span *ngIf="field.required" style="color: red;">*</span>
         </label>
 
-        <!-- Kendo TextBox for Name, Mobile, and Email -->
+        <!-- for Name, Mobile, and Email -->
         <kendo-textbox
           *ngIf="field.name !== 'Address'"
           [formControlName]="field.name"
@@ -30,16 +32,16 @@
 
           <!-- Pattern Validation Errors -->
           <span *ngIf="registrationForm.get(field.name)?.errors?.['pattern']">
-            <span *ngIf="field.name.toLowerCase() === 'name'">Only alphabets and spaces are allowed.</span>
+            <span *ngIf="field.name.toLowerCase() === 'name'">Only alphabets allowed.</span>
             <span *ngIf="field.name.toLowerCase() === 'mobile'">Mobile number must be 10 digits.</span>
             <span *ngIf="field.name.toLowerCase() === 'email'">Invalid email format.</span>
-            <span *ngIf="field.name.toLowerCase() === 'address'">Invalid characters in address.</span>
+            <!-- <span *ngIf="field.name.toLowerCase() === 'address'">Invalid characters in address.</span> -->
           </span>
 
-          <!-- Email Format Error -->
-          <span *ngIf="registrationForm.get(field.name)?.errors?.['email']">
+          <!--Email Format Error --> 
+           <!-- <span *ngIf="registrationForm.get(field.name)?.errors?.['email']">
             Invalid email format.
-          </span>
+          </span> -->
 
           <!-- Custom Validation: Email Starts with Capital Letter -->
           <span *ngIf="registrationForm.get(field.name)?.errors?.['capitalLetterAtStart']">
@@ -56,7 +58,9 @@
 
     <!-- Submit Button -->
     <div class="button-container">
-      <button kendoButton type="submit" [disabled]="registrationForm.invalid" class="submit-button">Submit</button>
+      <!-- <button kendoButton type="submit" [disabled]="registrationForm.invalid" class="submit-button">Submit</button> -->
+      <button kendoButton type="submit"  class="submit-button">Submit</button>
+
     </div>
   </form>
 </div>

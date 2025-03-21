@@ -30,6 +30,7 @@
         </td>
 
         <td class="names">{{ field.name }}</td>
+        
         <td>
           <label class="checkbox-container">
             <input 
@@ -39,6 +40,7 @@
               [disabled]="!field.show"
               [attr.aria-label]="'Toggle required for'+ [ field.name ]"
             />
+            
             <span class="checkmark"></span>
           </label>
         </td>

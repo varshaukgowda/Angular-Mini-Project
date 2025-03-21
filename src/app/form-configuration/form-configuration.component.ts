@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../shared/shared-data.service';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router';  
 
 @Component({
   selector: 'app-form-configuration',
@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 
 export class FormConfigurationComponent implements OnInit {  
-// This exports the class so Angular can use it.
-// Implements OnInit, which means it will run ngOnInit() when the component loads.
+
+//array of objects
   public fields = [
     { name: 'Name', show: true, required: false, order: 1 },
     { name: 'Mobile', show: true, required: false, order: 2 },
@@ -18,15 +18,14 @@ export class FormConfigurationComponent implements OnInit {
     { name: 'Address', show: true, required: false, order: 4 }
   ];
 
-  private draggedIndex: number | null = null; // Stores the dragged index
+  private draggedIndex: number | null = null; 
 
-
-  constructor(private sharedData: SharedDataService,
-    private router:Router
+  constructor(private sharedData: SharedDataService,   
+    private router:Router 
   ) {}
 
-  ngOnInit() {
-    this.fields = JSON.parse(JSON.stringify(this.sharedData.getFields()));
+  ngOnInit() {     
+    this.fields = JSON.parse(JSON.stringify(this.sharedData.getFields()));  
     console.log(this.fields);
     // this.updateGridView();
   }
@@ -41,19 +40,18 @@ export class FormConfigurationComponent implements OnInit {
   }
 
   saveConfiguration() {
-    this.sharedData.setFields(this.fields);
+    this.sharedData.setFields(this.fields);  
     alert('Configuration saved successfully!');
     this.router.navigate(['/member-registration'])
   }
 
-  // Drag & Drop Reordering Logic
   onDragStart(index: number, event: DragEvent) {
     this.draggedIndex = index;
     event.dataTransfer?.setData('text/plain', index.toString());
   }
 
   onDragOver(event: DragEvent) {
-    event.preventDefault(); // Required to allow dropping
+    event.preventDefault();
   }
 
   onDrop(targetIndex: number, event: DragEvent) {
@@ -63,12 +61,11 @@ export class FormConfigurationComponent implements OnInit {
     const draggedItem = this.fields.splice(this.draggedIndex, 1)[0];
     this.fields.splice(targetIndex, 0, draggedItem);
 
-    // Update order values
     this.fields.forEach((field, index) => {
       field.order = index + 1;
     });
 
-    this.sharedData.setFields(this.fields); // Save new order
-    this.draggedIndex = null; // Reset
+    this.sharedData.setFields(this.fields); 
+    this.draggedIndex = null; 
   }
 }
