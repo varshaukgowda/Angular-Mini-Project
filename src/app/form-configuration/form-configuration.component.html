@@ -1,3 +1,10 @@
+<header>
+  <nav>
+    <a routerLink="/member-registration" routerLinkActive="active">Register</a>
+    <a routerLink="/form-configuration" routerLinkActive="active">Configure</a>
+  </nav>
+</header>
+
 <h1>Form Configuration</h1>
 
 <div class="configuration-container">
@@ -24,6 +31,7 @@
               [checked]="field.show" 
               (change)="updateFieldVisibility(field)" 
               [attr.aria-label]=" 'Toggle visibility for'+ [ field.name ]"
+              [disabled]="field.name === 'mobile'"
             />
             <span class="checkmark"></span>
           </label>

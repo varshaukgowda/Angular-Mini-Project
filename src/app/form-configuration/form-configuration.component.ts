@@ -13,7 +13,7 @@ export class FormConfigurationComponent implements OnInit {
 //array of objects
   public fields = [
     { name: 'Name', show: true, required: false, order: 1 },
-    { name: 'Mobile', show: true, required: false, order: 2 },
+    { name: 'Mobile', show: true, required: true, order: 2 },
     { name: 'Email', show: true, required: false, order: 3 },
     { name: 'Address', show: true, required: false, order: 4 }
   ];
@@ -26,7 +26,7 @@ export class FormConfigurationComponent implements OnInit {
 
   ngOnInit() {     
     this.fields = JSON.parse(JSON.stringify(this.sharedData.getFields()));  
-    console.log(this.fields);
+    // console.log(this.fields);
     // this.updateGridView();
   }
 

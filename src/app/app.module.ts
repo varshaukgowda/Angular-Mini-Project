@@ -10,6 +10,12 @@ import { SharedDataService } from './shared/shared-data.service';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { SetPasswordComponent } from './set-password/set-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+
+// import {}
 
 
 
@@ -21,12 +27,17 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
   declarations: [
     AppComponent,
     FormConfigurationComponent,
-    MemberRegistrationComponent
+    MemberRegistrationComponent,
+    SetPasswordComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule, // Enable reactive forms
-    AppRoutingModule,  InputsModule, ButtonsModule,
+    AppRoutingModule,  
+    InputsModule, 
+    ButtonsModule, BrowserAnimationsModule,
      // Enable routing
   ],
   providers: [SharedDataService], // Provide the shared service
