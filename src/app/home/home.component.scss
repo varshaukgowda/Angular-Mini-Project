@@ -1,0 +1,41 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; // Full viewport height
+    text-align: center;
+    // background: linear-gradient(to right, #6a11cb, #2575fc); 
+    background-color: #fff;
+    color: black; // White text color
+    font-family: 'Arial', sans-serif;
+  
+    h2 {
+      font-size: 2.5rem;
+    //   margin-bottom: 10px;
+    //   margin-bottom: 100px;
+    }
+  
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      
+    }
+  
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: black; // Red button
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+  
+      &:hover {
+        background-color: #333; // Darker red on hover
+      }
+    }
+  }
+  

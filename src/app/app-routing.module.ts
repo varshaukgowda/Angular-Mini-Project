@@ -5,6 +5,7 @@ import { FormConfigurationComponent } from './form-configuration/form-configurat
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth.guard.service';
 
 const routes: Routes = [
   { path: 'member-registration', component: MemberRegistrationComponent },
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/member-registration', pathMatch: 'full' } ,
   { path: 'set-password', component: SetPasswordComponent },
   { path: 'login',component:LoginComponent},
-  { path: 'home',component:HomeComponent }
+  { path: 'home',component:HomeComponent ,canActivate: [AuthGuard]},
 ];
 
 @NgModule({

@@ -139,18 +139,20 @@ export class MemberRegistrationComponent implements OnInit {
     }
 
     
-  const username=this.registrationForm.get('name')?.value;  
+  const username=this.registrationForm.get('Name')?.value;  
   const mobile = this.registrationForm.get('Mobile')?.value;
   // const mobile = this.registrationForm.get('Mobile')?.value || this.registrationForm.get('mobile')?.value;
-  console.log("Mobile value:", mobile);
+  // console.log("Mobile value:", mobile);
 
   if (username) {
     sessionStorage.setItem('username', username);
+    // console.log("Stored userMobile:", sessionStorage.getItem('username'));
   }
   if (mobile) {
     sessionStorage.setItem('userMobile', mobile);
     // console.log("Stored userMobile:", sessionStorage.getItem('userMobile'));
   }
+  // console.log('Stored username:', sessionStorage.getItem('username'));
 
   console.log('Form Submitted', this.registrationForm.value);
   alert('Form submitted successfully!');

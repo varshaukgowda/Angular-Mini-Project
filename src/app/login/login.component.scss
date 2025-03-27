@@ -60,6 +60,7 @@ h1 {
         border-radius: 5px;
         cursor: pointer;
         transition: background 0.3s ease-in-out;
+        font-family: 'Times New Roman', Times, serif;
   
         &:hover {
           background-color: #333;
@@ -67,7 +68,7 @@ h1 {
   
         &:disabled {
           background: #aaa;
-          cursor: not-allowed;
+          // cursor: not-allowed;
         }
       }
     }

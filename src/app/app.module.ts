@@ -14,13 +14,7 @@ import { SetPasswordComponent } from './set-password/set-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-
 // import {}
-
-
-
-
- // Shared service
 
 
 @NgModule({

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../shared/shared-data.service';
 import { Router } from '@angular/router';  
+// import {Toastr}
+
 
 @Component({
   selector: 'app-form-configuration',
