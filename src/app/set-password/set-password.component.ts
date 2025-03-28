@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-set-password',
@@ -12,7 +13,10 @@ export class SetPasswordComponent {
 
   passwordForm:FormGroup;   
 
-  constructor(private fb:FormBuilder,private router:Router)
+  constructor(private fb:FormBuilder,private router:Router,
+    private toastr:ToastrService
+
+  )
   {
     this.passwordForm=this.fb.group(
       {
@@ -44,9 +48,9 @@ export class SetPasswordComponent {
       }
       // const userName = this.passwordForm.get('userName')?.value; 
       const password=this.passwordForm.get('newPassword')?.value;
-      const emailOrMobile =sessionStorage.getItem('userMobile');
+      const emailOrMobile =sessionStorage.getItem('userMobile' ) || sessionStorage.getItem('useremail');
       if (!emailOrMobile) {
-        alert('No email or mobile number found. Please register first.');
+        // alert('No email or mobile number found. Please register first.');
         return;
       }
       const secretKey = 'mySecretKey123!'; 
@@ -58,7 +62,9 @@ export class SetPasswordComponent {
 
 
 
-      alert('password successfully set !');
+      // alert('password successfully set !');
+      this.toastr.success('password successfully set !', 'Success');
+
       this.router.navigate(['/login']);
     }
   }

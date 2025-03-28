@@ -14,7 +14,8 @@ import { SetPasswordComponent } from './set-password/set-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-// import {}
+import { ToastrModule } from 'ngx-toastr'; 
+// import {NgToastModule} from 'ng-angular-popup';
 
 
 @NgModule({
@@ -31,7 +32,16 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule, // Enable reactive forms
     AppRoutingModule,  
     InputsModule, 
-    ButtonsModule, BrowserAnimationsModule,
+    ButtonsModule, 
+    BrowserAnimationsModule,
+    // NgToastModule
+    ToastrModule.forRoot({
+      // positionClass: 'toast-top-right', 
+      // closeButton: true,
+      progressBar: true,
+      // preventDuplicates: true, 
+      timeOut: 2000
+    }),
      // Enable routing
   ],
   providers: [SharedDataService], // Provide the shared service

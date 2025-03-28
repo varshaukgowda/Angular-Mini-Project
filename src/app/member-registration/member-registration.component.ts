@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn } from
 // FormBuilder, FormGroup, Validators: These are from Angular’s reactive forms module
 import { SharedDataService } from '../shared/shared-data.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-member-registration',
@@ -17,7 +18,9 @@ export class MemberRegistrationComponent implements OnInit {
   constructor(
     private router:Router,
      private fb: FormBuilder,
-     private sharedData: SharedDataService
+     private sharedData: SharedDataService,
+     private toastr:ToastrService
+
      
   ) {
     this.registrationForm = this.fb.group({});
@@ -118,7 +121,9 @@ export class MemberRegistrationComponent implements OnInit {
       // console.log("Form is invalid."); 
 
       if (this.registrationForm.errors?.['atLeastOneFieldRequired']) {
-        alert('Fill out the form.');
+        // alert('Fill out the form.');
+        this.toastr.warning('Login successful!', 'Warning');
+
       } else 
       
       {
@@ -132,7 +137,7 @@ export class MemberRegistrationComponent implements OnInit {
         } else if (emailControl?.errors?.['capitalLetterAtStart']) {
           alert('Email should not start with a capital letter.');
         } else {
-          alert('Please fill out all required fields correctly.');
+          // alert('Please fill out all required fields correctly.');
         }
       }
       return;
@@ -141,6 +146,7 @@ export class MemberRegistrationComponent implements OnInit {
     
   const username=this.registrationForm.get('Name')?.value;  
   const mobile = this.registrationForm.get('Mobile')?.value;
+  const email = this.registrationForm.get('Email')?.value;
   // const mobile = this.registrationForm.get('Mobile')?.value || this.registrationForm.get('mobile')?.value;
   // console.log("Mobile value:", mobile);
 
@@ -153,9 +159,13 @@ export class MemberRegistrationComponent implements OnInit {
     // console.log("Stored userMobile:", sessionStorage.getItem('userMobile'));
   }
   // console.log('Stored username:', sessionStorage.getItem('username'));
-
+  if(email){
+    sessionStorage.setItem('useremail',email);
+  }
   console.log('Form Submitted', this.registrationForm.value);
-  alert('Form submitted successfully!');
+  // alert('Form submitted successfully!');
+  this.toastr.success('Form submitted successfully!', 'Success');
+
   this.router.navigate(['/set-password']); 
   
   }

@@ -4,13 +4,13 @@
 <div class="login-container">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       
-      <label>Email or Mobile</label>
+      <label>Email or Mobile <span style="color: red;">*</span></label>
       <input type="text" formControlName="emailOrMobile" required />
       
-      <label>Password</label>
+      <label>Password <span style="color: red;">*</span></label>
       <input type="password" formControlName="password" required />
       
-      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <button kenoButton type="submit" [disabled]="loginForm.invalid">Login</button>
     </form>
   </div>
   

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../shared/shared-data.service';
 import { Router } from '@angular/router';  
-// import {Toastr}
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -23,7 +23,10 @@ export class FormConfigurationComponent implements OnInit {
   private draggedIndex: number | null = null; 
 
   constructor(private sharedData: SharedDataService,   
-    private router:Router 
+    private router:Router,
+    private toastr:ToastrService
+
+
   ) {}
 
   ngOnInit() {     
@@ -43,7 +46,9 @@ export class FormConfigurationComponent implements OnInit {
 
   saveConfiguration() {
     this.sharedData.setFields(this.fields);  
-    alert('Configuration saved successfully!');
+    // alert('Configuration saved successfully!');
+    this.toastr.success('Configuration saved successfully!', 'Success');
+
     this.router.navigate(['/member-registration'])
   }
 

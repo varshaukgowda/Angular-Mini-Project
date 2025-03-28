@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,11 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder,
+     private router: Router,
+     private toastr:ToastrService
+
+  ) {
     this.loginForm = this.fb.group({
       emailOrMobile: ['', Validators.required],
       password: ['', Validators.required]
@@ -27,15 +33,15 @@ export class LoginComponent {
     const enteredEmailOrMobile = this.loginForm.get('emailOrMobile')?.value;
     const enteredPassword = this.loginForm.get('password')?.value;
 
-    // Retrieve stored credentials
     const storedEmailOrMobile = sessionStorage.getItem('authUser');
     const encryptedPassword = sessionStorage.getItem('encryptedPassword');
-    // const storedUserName= sessionStorage.getItem('userName');
     const secretKey = 'mySecretKey123!';
 
     if (!storedEmailOrMobile || !encryptedPassword  ) 
       {
-      alert('No account found. Please set a password first.');
+      // alert('No account found. Please set a password first.');
+      this.toastr.error('No account found. Please set a password first.', 'Error');
+
       return;
     }
 
@@ -47,11 +53,17 @@ export class LoginComponent {
     if (enteredEmailOrMobile === storedEmailOrMobile && enteredPassword === decryptedPassword) {
       sessionStorage.setItem('isLoggedIn', 'true');  // Store login status
       // sessionStorage.setItem('loggedInUser', storedUserName);
-      alert('Login successful!');
+      // alert('Login successful!');
+      this.toastr.success('Login successful!', 'Success');
+
       this.router.navigate(['/home']);
 
     } else {
-      alert('Invalid credentials. Please try again.');
+      // alert('Invalid credentials. Please try again.');
+      // this.toast.error({ detail: "Error", summary: "Invalid credentials. Please try again.", duration: 3000 });
+      this.toastr.error('Invalid credentials. Please try again.', 'Error');
+
+
     }
   }
 }
